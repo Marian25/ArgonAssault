@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 199675524531484146}
   - component: {fileID: 82264450113063762}
   m_Layer: 0
-  m_Name: Explosion
+  m_Name: Player Death FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,6 +301,8 @@ MonoBehaviour:
   ySpeed: 10
   yMin: 6
   yMax: 6
+  guns:
+  - {fileID: 1154744464316594}
   positionPitchFactor: -2
   positionYawFactor: 2
   controlPitchFactor: -10

@@ -283,10 +283,6 @@ Prefab:
       propertyPath: m_Name
       value: Player Ship
       objectReference: {fileID: 0}
-    - target: {fileID: 1715501907730488, guid: 233eca2bf24238949aced60084cd8502, type: 2}
-      propertyPath: m_Name
-      value: Player Death FX
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 233eca2bf24238949aced60084cd8502, type: 2}
   m_IsPrefabAsset: 0
@@ -1458,7 +1454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 426bc8adb1e89d2498b7966763f607b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scorePerHit: 12
 --- !u!1 &2124865919
 GameObject:
   m_ObjectHideFlags: 0

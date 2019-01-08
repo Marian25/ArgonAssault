@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] float ySpeed = 10f;
     [SerializeField] float yMin = 6f;
     [SerializeField] float yMax = 6f;
+    [SerializeField] GameObject[] guns;
 
     [SerializeField] float positionPitchFactor = -2f;
     [SerializeField] float positionYawFactor = 2f;
@@ -27,12 +28,30 @@ public class PlayerController : MonoBehaviour {
         {
             ProcessTranslation();
             ProcessRotation();
+            ProcessFiring();
         }
     }
 
     void OnPlayerDeath()
     {
         isControlEnabled = false;
+    }
+
+    void ProcessFiring()
+    {
+        if (CrossPlatformInputManager.GetButton("Fire"))
+        {
+            foreach(GameObject gun in guns)
+            {
+                gun.SetActive(true);
+            }
+        } else
+        {
+            foreach (GameObject gun in guns)
+            {
+                gun.SetActive(false);
+            }
+        }
     }
 
     void ProcessTranslation()

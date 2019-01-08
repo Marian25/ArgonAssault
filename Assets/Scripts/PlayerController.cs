@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-public class Player : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     [SerializeField] float xSpeed = 12f;
     [SerializeField] float xMovementRange = 8f;
@@ -18,17 +18,21 @@ public class Player : MonoBehaviour {
 
     float xThrow = 0;
     float yThrow = 0;
+    bool isControlEnabled = true;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update ()
     {
-        ProcessTranslation();
-        ProcessRotation();
+        if (isControlEnabled)
+        {
+            ProcessTranslation();
+            ProcessRotation();
+        }
+    }
+
+    void OnPlayerDeath()
+    {
+        isControlEnabled = false;
     }
 
     void ProcessTranslation()
